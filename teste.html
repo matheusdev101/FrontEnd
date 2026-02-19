@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Coleção - Valorant</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f3efe6;
+    color: #4b2e1e;
+}
+
+/* NAVBAR */
+nav {
+    background-color: #8b5e3c;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: white;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background-color: #f3efe6;
+    color: #8b5e3c;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* CARDS */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.card {
+    background-color: white;
+    width: 320px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #8b5e3c;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.card button {
+    background-color: #8b5e3c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background-color: #4b2e1e;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #8b5e3c;
+    color: white;
+    margin-top: 40px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+    <h1>Minhas Armas Favoritas</h1>
+    <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Coleção</a></li>
+        <li><a href="#">Sobre</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h2>Coleção Pessoal - Valorant</h2>
+    <p>Essas são as armas que eu mais gosto e gostaria de colecionar skins no Valorant.</p>
+</section>
+
+<section class="container">
+
+    <div class="card">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.P_xLkxMzwyAohPD59Kd1kAHaBb?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+        <div class="card-content">
+            <h3>Operator (OP)</h3>
+            <p>Sniper de alto impacto. Um tiro, uma eliminação.</p>
+            <button>Favorita ⭐</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://th.bing.com/th/id/R.2d236c45a8229ba1d7f3860d49d18f3b?rik=Yona4amUNZ%2fwYw&riu=http%3a%2f%2fnoticias.maisesports.com.br%2fwp-content%2fuploads%2f2022%2f07%2fArmas-do-VALORANT-8.png&ehk=ryhBsDhAv9AdumUQ07LbED9krAPhNV3Ryv440XWBlRg%3d&risl=&pid=ImgRaw&r=0">
+        <div class="card-content">
+            <h3>Vandal</h3>
+            <p>Rifle preciso e letal em qualquer distância.</p>
+            <button>Favorita ⭐</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://th.bing.com/th/id/R.acb9260d840b373e966cd9332f069ffd?rik=VWugcFEuXwKCIg&riu=http%3a%2f%2fnoticias.maisesports.com.br%2fwp-content%2fuploads%2f2022%2f07%2fArmas-do-VALORANT-10.png&ehk=8m8Cy2PVzejIHKpLavNrEL%2f3IZkUDxSXhh1MrO5y9lA%3d&risl=&pid=ImgRaw&r=0">
+        <div class="card-content">
+            <h3>Bulldog</h3>
+            <p>Rifle versátil com modo rajada alternativo.</p>
+            <button>Favorita ⭐</button>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 - Projeto demonstrativo inspirado em Valorant
+</footer>
+
+</body>
+</html>
