@@ -1,0 +1,89 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+	color: #40352C;
+}
+
+body {
+	background-color: #D9CBBF;
+	line-height: 1.6;
+}
+
+.header {
+	background-color: #40352C;
+	padding: 20px;
+	text-align: center;
+}
+
+.header h1 {
+	color: #D9CBBF;
+	margin-bottom: 10px;
+}
+
+.header p {
+	color: #D9CBBF;
+}
+
+.header ul {
+	margin-top: 15px;
+	list-style-position: inside;
+}
+
+.header li {
+	color: #D9CBBF;
+}
+
+.main {
+	padding: 20px;
+	margin: 20px;
+	background-color: #D9CBBF;
+	border-radius: 8px;
+}
+
+section {
+	background-color: #BFA893;
+	padding: 15px;
+	margin-bottom: 20px;
+	border-radius: 8px;
+}
+
+section h3 {
+	background-color: #8C7968;
+	padding: 8px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	color: #fff;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+.formulario input[type="text"],
+.formulario textarea {
+	width: 100%;
+	padding: 8px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	border: none;
+}
+
+.formulario input[type="radio"] {
+	margin-right: 5px;
+}
+
+.formulario button {
+	background-color: #40352C;
+	color: #D9CBBF;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.formulario button:hover {
+	background-color: #8C7968;
+}
