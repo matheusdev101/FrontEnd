@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Atividade Prática - JavaScript</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container{
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    header{
+      background-color: #2c3e50;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .card{
+      background-color: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2{
+      margin-bottom: 20px;
+      color: #e67e22;
+    }
+
+    input, select, button{
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button{
+      background-color: #2c3e50;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover{
+      background-color: #1a252f;
+    }
+
+    .resultado{
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .aprovado{
+      color: blue;
+    }
+
+    .exame{
+      color: green;
+    }
+
+    .reprovado{
+      color: red;
+    }
+
+    ul{
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    li{
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .riscado{
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    .botoes button{
+      width: auto;
+      margin-left: 5px;
+      padding: 5px 10px;
+    }
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td{
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th{
+      background-color: #2c3e50;
+      color: white;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>Laboratório de Programação FrontEnd</h1>
+    <p>Exercícios Práticos com JavaScript</p>
+  </header>
+
+  <!-- EXERCICIO 1 -->
+
+  <div class="card">
+
+    <h2>Exercício 01 - Validador de CPF</h2>
+
+    <input type="text" id="cpf" placeholder="Digite o CPF">
+
+    <button onclick="validarCPF()">
+      Validar CPF
+    </button>
+
+    <p id="resultadoCPF" class="resultado"></p>
+
+  </div>
+
+  <!-- EXERCICIO 2 -->
+
+  <div class="card">
+
+    <h2>Exercício 02 - Conversor de Temperatura</h2>
+
+    <input type="number" id="celsius" placeholder="Celsius">
+
+    <input type="number" id="fahrenheit" placeholder="Fahrenheit">
+
+  </div>
+
+  <!-- EXERCICIO 3 -->
+
+  <div class="card">
+
+    <h2>Exercício 03 - Média Escolar</h2>
+
+    <input type="text" id="nomeAluno" placeholder="Nome do aluno">
+
+    <input type="number" id="nota1" placeholder="Nota 1">
+
+    <input type="number" id="nota2" placeholder="Nota 2">
+
+    <input type="number" id="nota3" placeholder="Nota 3">
+
+    <button onclick="calcularMedia()">
+      Calcular Média
+    </button>
+
+    <p id="resultadoMedia" class="resultado"></p>
+
+  </div>
+
+  <!-- EXERCICIO 4 -->
+
+  <div class="card">
+
+    <h2>Exercício 04 - Infinity Bank</h2>
+
+    <select id="bandeira">
+      <option value="visa">Visa</option>
+      <option value="master">Master</option>
+      <option value="elo">Elo</option>
+    </select>
+
+    <input type="number" id="valorVenda" placeholder="Valor da venda">
+
+    <input type="number" id="parcelas" placeholder="Quantidade de parcelas">
+
+    <button onclick="calcularVenda()">
+      Calcular
+    </button>
+
+    <div id="resultadoVenda" class="resultado"></div>
+
+  </div>
+
+  <!-- EXERCICIO 5 -->
+
+  <div class="card">
+
+    <h2>Exercício 05 - Lista VIP</h2>
+
+    <input type="text" id="convidado" placeholder="Nome do convidado">
+
+    <button onclick="adicionarConvidado()">
+      Adicionar
+    </button>
+
+    <ul id="listaConvidados"></ul>
+
+  </div>
+
+  <!-- EXERCICIO 6 -->
+
+  <div class="card">
+
+    <h2>Exercício 06 - Crédito para Eventos</h2>
+
+    <select id="pacote">
+      <option value="50">Standard</option>
+      <option value="80">Premium</option>
+      <option value="120">Infinity Deluxe</option>
+    </select>
+
+    <input type="number" id="pessoas" placeholder="Quantidade de pessoas">
+
+    <button onclick="calcularEvento()">
+      Calcular Orçamento
+    </button>
+
+    <div id="resultadoEvento" class="resultado"></div>
+
+  </div>
+
+  <!-- EXERCICIO 7 -->
+
+  <div class="card">
+
+    <h2>Exercício 07 - Validador de Cartão</h2>
+
+    <input type="text" id="cartao" maxlength="19" placeholder="Digite o número do cartão">
+
+    <button onclick="validarCartao()">
+      Analisar Cartão
+    </button>
+
+    <div id="resultadoCartao" class="resultado"></div>
+
+  </div>
+
+</div>
+
+<script>
+
+  // =========================================
+  // EXERCICIO 1
+  // =========================================
+
+  function validarCPF(){
+
+    let cpf = document.getElementById("cpf").value;
+
+    cpf = cpf.replace(/\D/g, "");
+
+    let resultado = document.getElementById("resultadoCPF");
+
+    if(cpf.length != 11){
+      resultado.innerHTML = "CPF Inválido";
+      resultado.style.color = "red";
+      return;
+    }
+
+    let soma = 0;
+
+    for(let i = 0; i < 9; i++){
+
+      soma += Number(cpf[i]) * (10 - i);
+
+    }
+
+    let digito1 = (soma * 10) % 11;
+
+    if(digito1 == 10){
+      digito1 = 0;
+    }
+
+    soma = 0;
+
+    for(let i = 0; i < 10; i++){
+
+      soma += Number(cpf[i]) * (11 - i);
+
+    }
+
+    let digito2 = (soma * 10) % 11;
+
+    if(digito2 == 10){
+      digito2 = 0;
+    }
+
+    if(
+      digito1 == cpf[9] &&
+      digito2 == cpf[10]
+    ){
+      resultado.innerHTML = "CPF Válido";
+      resultado.style.color = "green";
+    }
+    else{
+      resultado.innerHTML = "CPF Inválido";
+      resultado.style.color = "red";
+    }
+
+  }
+
+  // =========================================
+  // EXERCICIO 2
+  // =========================================
+
+  let celsius = document.getElementById("celsius");
+
+  let fahrenheit = document.getElementById("fahrenheit");
+
+  celsius.addEventListener("input", function(){
+
+    let c = parseFloat(celsius.value);
+
+    if(!isNaN(c)){
+
+      fahrenheit.value = ((c * 9/5) + 32).toFixed(2);
+
+    }
+
+  });
+
+  fahrenheit.addEventListener("input", function(){
+
+    let f = parseFloat(fahrenheit.value);
+
+    if(!isNaN(f)){
+
+      celsius.value = ((f - 32) * 5/9).toFixed(2);
+
+    }
+
+  });
+
+  // =========================================
+  // EXERCICIO 3
+  // =========================================
+
+  function calcularMedia(){
+
+    let nome = document.getElementById("nomeAluno").value;
+
+    let n1 = Number(document.getElementById("nota1").value);
+
+    let n2 = Number(document.getElementById("nota2").value);
+
+    let n3 = Number(document.getElementById("nota3").value);
+
+    let media = (n1 + n2 + n3) / 3;
+
+    let resultado = document.getElementById("resultadoMedia");
+
+    if(media >= 7){
+
+      resultado.innerHTML =
+      nome + " foi APROVADO com média " + media.toFixed(2);
+
+      resultado.className = "resultado aprovado";
+
+    }
+    else if(media >= 4){
+
+      let falta = 10 - media;
+
+      resultado.innerHTML =
+      nome + " está em EXAME. Faltam " +
+      falta.toFixed(2) + " pontos.";
+
+      resultado.className = "resultado exame";
+
+    }
+    else{
+
+      resultado.innerHTML =
+      nome + " foi REPROVADO com média " + media.toFixed(2);
+
+      resultado.className = "resultado reprovado";
+
+    }
+
+  }
+
+  // =========================================
+  // EXERCICIO 4
+  // =========================================
+
+  function calcularVenda(){
+
+    let bandeira = document.getElementById("bandeira").value;
+
+    let valor = Number(document.getElementById("valorVenda").value);
+
+    let parcelas = Number(document.getElementById("parcelas").value);
+
+    let taxa = 0;
+
+    switch(bandeira){
+
+      case "visa":
+        taxa = 0.02;
+      break;
+
+      case "master":
+        taxa = 0.0185;
+      break;
+
+      case "elo":
+        taxa = 0.03;
+      break;
+
+    }
+
+    let taxaBandeira = valor * taxa;
+
+    let juros = valor * (0.0035 * parcelas);
+
+    let taxaMensal = 12.50 * parcelas;
+
+    let total =
+      valor +
+      taxaBandeira +
+      juros +
+      taxaMensal;
+
+    let valorParcela = total / parcelas;
+
+    document.getElementById("resultadoVenda").innerHTML =
+
+    `
+      Taxa da bandeira: R$ ${taxaBandeira.toFixed(2)} <br>
+      Juros: R$ ${juros.toFixed(2)} <br>
+      Taxa mensal: R$ ${taxaMensal.toFixed(2)} <br>
+      Total: R$ ${total.toFixed(2)} <br>
+      Parcelas: R$ ${valorParcela.toFixed(2)}
+    `;
+
+  }
+
+  // =========================================
+  // EXERCICIO 5
+  // =========================================
+
+  function adicionarConvidado(){
+
+    let nome = document.getElementById("convidado").value.trim();
+
+    if(nome == ""){
+      alert("Digite um nome");
+      return;
+    }
+
+    let ul = document.getElementById("listaConvidados");
+
+    let li = document.createElement("li");
+
+    let span = document.createElement("span");
+
+    span.innerHTML = nome;
+
+    let div = document.createElement("div");
+
+    div.classList.add("botoes");
+
+    // BOTAO CONCLUIR
+
+    let btnConcluir = document.createElement("button");
+
+    btnConcluir.innerHTML = "Concluir";
+
+    btnConcluir.onclick = function(){
+
+      span.classList.toggle("riscado");
+
+    };
+
+    // BOTAO EDITAR
+
+    let btnEditar = document.createElement("button");
+
+    btnEditar.innerHTML = "Editar";
+
+    btnEditar.onclick = function(){
+
+      let novoNome = prompt("Novo nome:");
+
+      if(novoNome != null && novoNome.trim() != ""){
+
+        span.innerHTML = novoNome;
+
+      }
+
+    };
+
+    // BOTAO EXCLUIR
+
+    let btnExcluir = document.createElement("button");
+
+    btnExcluir.innerHTML = "Excluir";
+
+    btnExcluir.onclick = function(){
+
+      li.remove();
+
+    };
+
+    div.appendChild(btnConcluir);
+    div.appendChild(btnEditar);
+    div.appendChild(btnExcluir);
+
+    li.appendChild(span);
+    li.appendChild(div);
+
+    ul.appendChild(li);
+
+    document.getElementById("convidado").value = "";
+
+  }
+
+  // =========================================
+  // EXERCICIO 6
+  // =========================================
+
+  function calcularEvento(){
+
+    let pacote =
+      Number(document.getElementById("pacote").value);
+
+    let pessoas =
+      Number(document.getElementById("pessoas").value);
+
+    let valorBase = pacote * pessoas;
+
+    let taxaServico = valorBase * 0.10;
+
+    let subtotal = valorBase + taxaServico;
+
+    let desconto = 0;
+
+    if(pessoas > 100){
+
+      desconto = subtotal * 0.05;
+
+    }
+
+    let total = subtotal - desconto;
+
+    document.getElementById("resultadoEvento").innerHTML =
+
+    `
+      Valor Base: R$ ${valorBase.toFixed(2)} <br>
+      Taxa de Serviço: R$ ${taxaServico.toFixed(2)} <br>
+      Desconto: R$ ${desconto.toFixed(2)} <br>
+      Total Final: R$ ${total.toFixed(2)}
+    `;
+
+  }
+
+  // =========================================
+  // EXERCICIO 7
+  // =========================================
+
+  function validarCartao(){
+
+    let numero =
+      document.getElementById("cartao").value;
+
+    numero = numero.replace(/\D/g, "");
+
+    let resultado =
+      document.getElementById("resultadoCartao");
+
+    if(numero.length < 13 || numero.length > 16){
+
+      resultado.innerHTML = "Cartão inválido";
+      resultado.style.color = "red";
+      return;
+
+    }
+
+    let soma = 0;
+
+    let alternar = false;
+
+    for(let i = numero.length - 1; i >= 0; i--){
+
+      let n = parseInt(numero[i]);
+
+      if(alternar){
+
+        n *= 2;
+
+        if(n > 9){
+          n -= 9;
+        }
+
+      }
+
+      soma += n;
+
+      alternar = !alternar;
+
+    }
+
+    let valido = soma % 10 == 0;
+
+    let bandeira = "Desconhecida";
+
+    if(numero.startsWith("4")){
+      bandeira = "Visa";
+    }
+    else if(
+      numero.startsWith("5")
+    ){
+      bandeira = "MasterCard";
+    }
+
+    if(valido){
+
+      resultado.innerHTML =
+
+      `
+        Status: Cartão Válido <br>
+        Bandeira: ${bandeira}
+      `;
+
+      resultado.style.color = "green";
+
+    }
+    else{
+
+      resultado.innerHTML =
+
+      `
+        Status: Cartão Inválido <br>
+        Bandeira: ${bandeira}
+      `;
+
+      resultado.style.color = "red";
+
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
